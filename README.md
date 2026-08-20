@@ -1,7 +1,7 @@
-# ARM EL3 Memory Fault Detector & Predictive Failure Analysis (PFA) Tool
+# ARM Memory Fault Detector & Predictive Failure Analysis (PFA) Tool
 
 ## Overview
-This tool provides real-time monitoring of ARM EL3 hardware errors, mapping ECC memory faults to physical DIMM topologies for rapid diagnostics. It intercepts DRAM ECC events and decodes complex syndrome data into actionable Predictive Failure Analysis (PFA) alerts.
+This tool provides real-time monitoring of ARM hardware errors, mapping ECC memory faults to physical DIMM topologies for rapid diagnostics. It intercepts DRAM ECC events and decodes complex syndrome data into actionable Predictive Failure Analysis (PFA) alerts.
 
 The project is heavily inspired by large-scale DRAM failure studies in data centers, including:
 - *Predicting Memory Failures in Data Centers (USENIX ATC '19)*
@@ -11,7 +11,7 @@ The project is heavily inspired by large-scale DRAM failure studies in data cent
 By analyzing error rates, persistence, and affected DQ lanes, the tool categorizes DRAM errors and predicts impending Uncorrectable Errors (UCE) or hardware faults before they cause system downtime.
 
 ## Key Features
-- **Real-Time EL3 Log Parsing**: Continuously monitors and parses DRAM ECC events from EL3 hardware logs.
+- **Real-Time Log Parsing**: Continuously monitors and parses DRAM ECC events from hardware logs.
 - **Physical Topology Mapping**: Maps logical addresses and errors to physical topology, including Socket, Channel, SubChannel, DIMM, Rank, CID, Bank Group, Bank, Row, and Column.
 - **DQ Signal Analysis**: Identifies Active DQ Errors and specific affected DQ lanes using `phy_lanes_bitmask`.
 - **Predictive Failure Analysis (PFA)**:
@@ -30,10 +30,10 @@ Based on the empirical findings from AIOps and large-scale data center studies, 
 5. `[PFA: CE Storm / Imminent UCE Risk]`: Correctable error burst (≥ 1,000 errors).
 
 ## Usage
-Run the tool directly on an ARM-based server. It automatically fetches DIMM topology (`--dimm-info`) and begins monitoring EL3 logs.
+Run the tool directly on an ARM-based server. It automatically fetches DIMM topology (`--dimm-info`) and begins monitoring logs.
 
 ```bash
 go run main.go
 ```
 
-By default, the tool invokes the underlying `arm_tool` to fetch and tail system logs (`--log -r --type el3`).
+By default, the tool invokes the underlying `arm_tool` to fetch and tail system logs.
