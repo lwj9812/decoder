@@ -1,9 +1,9 @@
 # 메모리 오류 감지 및 장애 예측 분석(PFA) 도구
 
 ## 개요
-이 도구는 ARM 하드웨어 오류를 실시간으로 모니터링하여, ECC 메모리 오류를 물리적 DIMM 토폴로지와 매핑함으로써 신속한 진단을 가능하게 합니다. DRAM ECC 이벤트를 가로채고 복잡한 신드롬(Syndrome) 데이터를 분석하여 실행 가능한 **예측적 장애 분석(PFA, Predictive Failure Analysis)** 경고를 생성합니다.
+이 도구는 하드웨어 오류를 실시간으로 모니터링하여, ECC 메모리 오류를 물리적 DIMM 토폴로지와 매핑함으로써 신속한 진단을 가능하게 합니다. DRAM ECC 이벤트를 가로채고 복잡한 신드롬(Syndrome) 데이터를 분석하여 실행 가능한 **예측적 장애 분석(PFA, Predictive Failure Analysis)** 경고를 생성합니다.
 
-이 프로젝트는 데이터 센터의 대규모 DRAM 장애 연구 논문들에서 깊은 영감을 받았습니다:
+이 프로젝트는 데이터 센터의 대규모 DRAM 장애 연구 논문들에서 참고하였습니다:
 - *Predicting Memory Failures in Data Centers (USENIX ATC '19)*
 - *DRAM errors in the wild: a large-scale field study*
 - *DRAM failure prediction in AIOps: Empirical evaluation challenge*
